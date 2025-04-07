@@ -24,7 +24,7 @@ class ScoreViewModel: ObservableObject{
                 let data = try Data(contentsOf: fileURL)
                 self.records = try JSONDecoder().decode([Record].self, from: data)
             } catch {
-                // if this file doest exist, then make records wempty
+                // if this file doest exist, then make records empty
                 records = []
             }
         }
