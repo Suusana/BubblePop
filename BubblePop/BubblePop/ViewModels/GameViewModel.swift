@@ -20,7 +20,7 @@ class GameViewModel: ObservableObject{
     @Published var isCountingDown = true
     @Published var countdown: Int = 3 // timer number for 3-2-1-Go animation
     
-    private var lastBublle:String? = nil // store tha last bubble that user popped
+    private var lastBublle:String? = nil // store the last bubble that user popped
     
     private var timer : Timer? // timer for game page
     private var refreshTimer:Timer? // timer for refresh bubbles
