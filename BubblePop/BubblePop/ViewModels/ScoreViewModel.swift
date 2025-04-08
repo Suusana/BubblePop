@@ -12,10 +12,6 @@ class ScoreViewModel: ObservableObject{
     
     private let fileName = "Scoreboard.json" // naming the file as Scoreboard.json
     
-    init(){
-        load()
-    }
-    
     private func load(){
         let fileURL = getFileURL()
         if FileManager.default.fileExists(atPath: fileURL.path) {
@@ -25,7 +21,7 @@ class ScoreViewModel: ObservableObject{
                 self.records = try JSONDecoder().decode([Record].self, from: data)
             } catch {
                 // if this file doest exist, then make records empty
-                records = []
+                self.records = []
             }
         }
     }
