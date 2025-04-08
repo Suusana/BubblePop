@@ -23,6 +23,8 @@ class ScoreViewModel: ObservableObject{
                 // if this file doest exist, then make records empty
                 self.records = []
             }
+        } else{
+            print("No such a file exist")
         }
     }
     
