@@ -45,9 +45,7 @@ struct GameView:View {
                             .resizable()
                             .frame(width: radius * 2, height: radius * 2)
                             .position(bubble.position)
-                            .scaleEffect(poppedBubbles.contains(bubble.id) ? 1.5 : 1.0)
                             .opacity(poppedBubbles.contains(bubble.id) ? 0 : 1)
-                            .animation(.easeInOut(duration: 0.3), value: poppedBubbles)
                             .onTapGesture {
                                 // to get the actual score,eg: score x1.5
                                 let actualScore = viewModel.popBubble(bubble: bubble)
@@ -55,13 +53,10 @@ struct GameView:View {
                                 showScore = true
 
                                 // showing floating score for 0.3 seconds
+                                poppedBubbles.insert(bubble.id)
+                                
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                                     showScore = false
-                                }
-
-                                // showing the animation of bubble for 0.3 seconds
-                                poppedBubbles.insert(bubble.id)
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                                     poppedBubbles.remove(bubble.id)
                                 }
                             }

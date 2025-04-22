@@ -18,7 +18,7 @@ struct MenuView: View {
                 //background
                 catBackground()
                 
-                // Title TextInput and buttons
+                // Title, TextInput and buttons
                 VStack {
                     Spacer()
                     Text("Bubble Pop")

@@ -134,6 +134,6 @@ class GameViewModel: ObservableObject{
             }
         }
 
-        speed += 0.005
+        speed += 0.01
     }
 }
